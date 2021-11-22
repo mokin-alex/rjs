@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
 }
 
@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #173f8d;
-  min-height: 50vh;
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,6 +40,37 @@
 .App-message {
   color: black;
   background-color: #7291ce;
+  font-size: calc(10px + 1vmin);
+  margin: 5px;
+}
+
+.App-form {
+  color: black;
+  background-color: #ecd439;
   font-size: calc(10px + 2vmin);
   margin: 5px;
+  padding: 10px;
+}
+
+.App-input {
+  width: 60%;
+  height: 36px;
+  box-sizing: border-box;
+  padding: 0 22px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.6);
+}
+.App-input_name{
+  width: 20%;
+  border-top-left-radius: 23px;
+  border-bottom-left-radius: 23px;
+}
+.App-button {
+  width: 20%;
+  height: 36px;
+  border-top-right-radius: 23px;
+  border-bottom-right-radius: 23px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.6);
 }

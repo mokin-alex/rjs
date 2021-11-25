@@ -1,0 +1,19 @@
+{
+  "name": "hw-1",
+  "version": "1.0.0",
+  "description": "reactJS home work 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mokin-alex/rjs.git"
+  },
+  "author": "Alex Mokin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mokin-alex/rjs/issues"
+  },
+  "homepage": "https://github.com/mokin-alex/rjs#readme"
+}

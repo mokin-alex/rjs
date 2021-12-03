@@ -32,7 +32,7 @@ export default function Profile() {
                     <span>Show Name</span>
                     {showName && <p><strong>{name}</strong></p>}
                 </div>
-                <p>----------------</p>
+                <p>-----------------</p>
             </main>
             <nav>
                 <Link to="/">Home</Link>

@@ -3,24 +3,25 @@ import {Container} from "@mui/material";
 import MessageInput from "./MessageInput";
 import Message from "./Message";
 import {useParams} from "react-router-dom";
-import {useSelector} from "react-redux";
-import messagesSlice from "../store/messagesSlice";
-import store from "../store";
+//import {useSelector} from "react-redux";
+//import messagesSlice from "../store/messagesSlice";
+//import store from "../store";
 import {addMessageWithThunk} from "../middleware/addMessageWithThunk";
 
 
 export default function ChatView() {
     const botName = 'Ustas';
     const {chatId} = useParams();
-    let allMessages = useSelector(state => state.messages);
-    let msgs = allMessages.filter(msg => msg.chatID === chatId)
+    let msgs ={};
+    //let allMessages = useSelector(state => state.messages);
+    //let msgs = allMessages.filter(msg => msg.chatID === chatId)
     //пока заглушка для несуществующих ID
-    if (msgs.length === 0) {
+/*    if (msgs.length === 0) {
         msgs = [{chatID: chatId, fromUser: '', toUser: '', msgText: ''},]
-    }
+    }*/
 // Для работы с мидлваре:
   const newMessage = (input) => {
-        store.dispatch(messagesSlice.actions.addMessage(addMessageWithThunk(input)))
+        //store.dispatch(messagesSlice.actions.addMessage(addMessageWithThunk(input)))
     }
 
 /*    const newMessage = (input) => {

@@ -6,37 +6,35 @@ import NoMatch from "./components/NoMatch";
 import ChatList from "./components/ChatList";
 import ChatView from "./components/ChatView";
 import Layout from "./components/Layout";
-import {Provider} from "react-redux";
+/*import {Provider} from "react-redux";
 import store, {persistor} from "./store";
-import {PersistGate} from "redux-persist/integration/react";
+import {PersistGate} from "redux-persist/integration/react";*/
 import {ToDo} from "./components/ToDo";
 import {SignUp} from "./components/SignUp";
 import {SignIn} from "./components/SignIn";
-
+import {BrowserRouter} from "react-router-dom";
 
 function App() {
     return (
         <div className="App">
             <header className="App-header">
                 <img src={logo} className="App-logo" alt="logo"/>
-                <p>MAW ReactJS home work 9    </p>
-                <p>firebase</p>
+                <p>MAW ReactJS home work 10</p>
+                <p>firebase and testing</p>
             </header>
-            <Provider store={store}>
-                <PersistGate persistor={persistor}>
-                    <Routes>
-                        <Route path="/" element={<Layout/>}>
-                            <Route index element={<ChatList/>}/>
-                            <Route path="signin" element={<SignIn/>}/>
-                            <Route path="signup" element={<SignUp/>}/>
-                            <Route path="profile" element={<Profile/>}/>
-                            <Route path="/chats/:chatId" element={<ChatView/>}/>
-                            <Route path="todo" element={<ToDo/>}/>
-                            <Route path="*" element={<NoMatch/>}/>
-                        </Route>
-                    </Routes>
-                </PersistGate>
-            </Provider>
+            <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Layout/>}>
+                    <Route index element={<ChatList/>}/>
+                    <Route path="signin" element={<SignIn/>}/>
+                    <Route path="signup" element={<SignUp/>}/>
+                    <Route path="profile" element={<Profile/>}/>
+                    <Route path="/chats/:chatId" element={<ChatView/>}/>
+                    <Route path="todo" element={<ToDo/>}/>
+                    <Route path="*" element={<NoMatch/>}/>
+                </Route>
+            </Routes>
+            </BrowserRouter>
         </div>
     );
 }

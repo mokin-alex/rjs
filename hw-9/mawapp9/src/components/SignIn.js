@@ -1,9 +1,7 @@
 import {useState} from "react";
-import {getAuth, signInWithEmailAndPassword} from "firebase/auth";
+import {signInWithEmailAndPassword} from "firebase/auth";
 import {Button, Input, Link} from "@mui/material";
-import {auth, firebaseApp} from "../services/firebase";
-
-//const auth = getAuth(firebaseApp);
+import {auth} from "../services/firebase";
 
 export const SignIn = () => {
     const [email, setEmail] = useState((auth.currentUser) ? auth.currentUser.email : "");

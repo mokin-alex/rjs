@@ -27,7 +27,7 @@ function useFetch(url) {
 
     useEffect(() => {
         getQuery()
-    }, [])
+    },[])
 
     return {loading, error, data, getQuery}
 }
@@ -79,7 +79,7 @@ const TodoViewer = ({todos}) => {
             <List sx={{width: '100%', maxWidth: 300, bgcolor: 'background.paper', justifyContent: "center"}}>
                 {todos.map(({userId, id, title, completed}) => (
                         <ListItem
-                            key={userId}
+                            key={userId+id}
                         >
                             {userId}-{id} : {title} :
                             <Checkbox

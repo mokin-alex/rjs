@@ -3,17 +3,17 @@ import ListItem from "@mui/material/ListItem";
 import IconButton from "@mui/material/IconButton";
 import ListItemText from "@mui/material/ListItemText";
 import {Avatar, Button, Dialog, DialogTitle, Link, TextField} from "@mui/material";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 //import store, {persistor} from "../store";
-import {useSelector} from "react-redux";
+//import {useSelector} from "react-redux";
 //import chatsSlice from "../store/chatsSlice";
 import {db} from "../services/firebase";
-import {ref, push, set, query, onValue, child, remove} from "firebase/database";
+import {ref, push, set, onValue} from "firebase/database";
 
 export default function ChatList() {
     //let chatsList = useSelector(state => state.chats)
     let dbChatsList = [];
-    const chatListRef = ref(db, 'chats/');
+     const chatListRef = ref(db, 'chats/');
     const newChatRef = push(chatListRef);
     onValue(chatListRef, (snapshot) => {
 
@@ -22,11 +22,18 @@ export default function ChatList() {
             const childData = childSnapshot.val().chatUser;
             dbChatsList.push({id: childKey, chatUser: childData});
         });
+        console.log(chatsList);
     }, {
         onlyOnce: true
     });
+    const [chatsList, setChatsList] = useState(dbChatsList);
+    //setChatsList(dbChatsList);
+/*    useEffect(() => {
+        setChatsList(dbChatsList);
+        console.log(chatsList);
+    },[]);*/
     //console.log(dbChatsList);
-    //console.log(chatsList);
+
 
     const [visible, setVisible] = useState(false);
     const [newChatName, setNewChatName] = useState("");
@@ -66,7 +73,7 @@ export default function ChatList() {
     return (
         <div className="chat-list">
             <List sx={{width: '100%', maxWidth: 200, bgcolor: 'background.paper', justifyContent: "center"}}>
-                { dbChatsList.map(({id, chatUser}) => (
+                { chatsList.map(({id, chatUser}) => (
                     <ListItem
                         key={id}
                         disableGutters
